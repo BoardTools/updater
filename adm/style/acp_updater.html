@@ -1,0 +1,140 @@
+<!-- IF S_ALLOW_CDN -->
+<!-- INCLUDECSS //maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css -->
+<!-- ELSE -->
+<!-- INCLUDECSS {ROOT_PATH}ext/boardtools/updater/vendor/fortawesome/font-awesome/css/font-awesome.min.css -->
+<!-- ENDIF -->
+<!-- INCLUDECSS css/updater.css -->
+<!-- INCLUDE overall_header.html -->
+
+<a name="maincontent"></a>
+
+<h1 id="updater_ext_title">{L_ACP_UPDATER_EXT_TITLE}</h1>
+<!-- IF S_UPDATER_VERSIONCHECK && S_UPDATER_UP_TO_DATE -->
+<div class="description_bubble small_bubble ext_version_bubble" title="{UPDATER_UP_TO_DATE_MSG}">
+	<span class="description_name">{L_VERSION}</span>
+	<span class="description_value description_value_ok" id="meta_version">{META_VERSION}</span>
+</div>
+<!-- ELSE IF S_UPDATER_VERSIONCHECK && not S_UPDATER_UP_TO_DATE -->
+<div class="description_bubble small_bubble ext_version_bubble" title="{UPDATER_UP_TO_DATE_MSG}">
+	<span class="description_name">{L_VERSION}</span>
+	<span class="description_value description_value_old" id="meta_version">{META_VERSION}</span>
+</div>
+<!-- ELSE -->
+<div class="description_bubble small_bubble ext_version_bubble">
+	<span class="description_name">{L_VERSION}</span>
+	<span class="description_value" id="meta_version">{META_VERSION}</span>
+</div>
+<!-- ENDIF -->
+
+<p>{L_ACP_UPDATER_EXT_TITLE_EXPLAIN}</p>
+
+<!-- IF S_EXT_ERROR -->
+<div class="errorbox">{UPLOAD_ERROR}</div>
+<!-- ENDIF -->
+<!-- IF S_UPDATER_VERSIONCHECK -->
+<!-- ELSE IF S_UPDATER_VERSIONCHECK_STATUS == 0 -->
+<div class="errorbox notice">
+	<p>{L_VERSIONCHECK_FAIL}</p>
+	<p>{UPDATER_VERSIONCHECK_FAIL_REASON}</p>
+	<p><a href="{U_VERSIONCHECK_FORCE}">{L_VERSIONCHECK_FORCE_UPDATE}</a></p>
+</div>
+<!-- ELSE IF S_UPDATER_VERSIONCHECK_STATUS == 1 -->
+<div class="errorbox notice">
+	<p>{UPDATER_VERSIONCHECK_FAIL_REASON}</p>
+</div>
+<!-- ENDIF -->
+<!-- IF UPLOAD_EXT_INSTALLED -->
+<!-- IF S_UPLOAD_VERSIONCHECK -->
+<!-- ELSE IF S_UPLOAD_VERSIONCHECK_STATUS == 0 -->
+<div class="errorbox notice">
+	<p>{L_VERSIONCHECK_FAIL}</p>
+	<p>{UPLOAD_VERSIONCHECK_FAIL_REASON}</p>
+	<p><a href="{U_VERSIONCHECK_FORCE}">{L_VERSIONCHECK_FORCE_UPDATE}</a></p>
+</div>
+<!-- ELSE IF S_UPLOAD_VERSIONCHECK_STATUS == 1 -->
+<div class="errorbox notice">
+	<p>{UPLOAD_VERSIONCHECK_FAIL_REASON}</p>
+</div>
+<!-- ENDIF -->
+<!-- ENDIF -->
+
+<!-- IF S_NEXT_STEP -->
+<div class="successbox notice">
+	<p>{S_NEXT_STEP}</p>
+</div>
+<!-- ELSE -->
+
+<!-- IF (EXT_UPLOADED || EXT_ENABLED) && not S_EXT_ERROR -->
+<div class="ext_uploaded_notice">
+	<h1><i class="fa fa-check" id="uploaded_ok"></i><!-- IF EXT_ENABLED && S_UPLOAD_UP_TO_DATE -->{L_EXT_ENABLED_LATEST}<!-- ELSE IF EXT_ENABLED -->{L_EXT_ENABLED}<!-- ELSE -->{L_EXT_UPLOADED}<!-- ENDIF --></h1>
+</div>
+<!-- ENDIF -->
+
+<div class="updater_ext_step">{L_EXT_UPDATER_STEP_1}</div>
+<!-- IF UPLOAD_EXT_INSTALLED -->
+<div class="updater_upload_row">
+	<span class="updater_upload_name">{L_UPLOAD_EXTENSIONS}</span>
+	<!-- IF S_UPLOAD_VERSIONCHECK && S_UPLOAD_UP_TO_DATE -->
+	<div class="description_bubble small_bubble ext_version_bubble" title="{UPLOAD_UP_TO_DATE_MSG}">
+		<span class="description_name">{L_CURRENT_VERSION}</span>
+		<span class="description_value description_value_ok">{UPLOAD_META_VERSION}</span>
+	</div>
+	<!-- ELSE IF S_UPLOAD_VERSIONCHECK && not S_UPLOAD_UP_TO_DATE -->
+	<div class="description_bubble small_bubble ext_version_bubble" title="{UPLOAD_UP_TO_DATE_MSG}">
+		<span class="description_name">{L_CURRENT_VERSION}</span>
+		<span class="description_value description_value_old">{UPLOAD_META_VERSION}</span>
+	</div>
+	<!-- ELSE -->
+	<div class="description_bubble small_bubble ext_version_bubble">
+		<span class="description_name">{L_CURRENT_VERSION}</span>
+		<span class="description_value">{UPLOAD_META_VERSION}</span>
+	</div>
+	<!-- ENDIF -->
+</div>
+<!-- ENDIF -->
+<div class="updater_ext_status">
+	<strong>{L_STATUS}{L_COLON}</strong>
+	<!-- IF S_UPLOAD_VERSIONCHECK && S_UPLOAD_UP_TO_DATE -->
+	{L_UPDATER_UPLOAD_NO_NEW_UPDATES}
+	<!-- ELSE IF S_UPLOAD_VERSIONCHECK && not S_UPLOAD_UP_TO_DATE -->
+	{L_UPDATER_UPLOAD_NEW_UPDATES}
+	<!-- ELSE IF not UPLOAD_EXT_INSTALLED -->
+	{L_UPDATER_UPLOAD_NOT_INSTALLED}
+	<!-- ELSE -->
+	{L_UPDATER_UPLOAD_NO_UPDATES_INFO}
+	<!-- ENDIF -->
+</div>
+<div class="updater_ext_step<!-- IF not S_UPLOAD_VERSIONCHECK || S_UPLOAD_UP_TO_DATE--> updater_ext_grey_step<!-- ENDIF -->">{L_EXT_UPDATER_STEP_2}</div>
+<!-- IF S_UPLOAD_VERSIONCHECK && not S_UPLOAD_UP_TO_DATE -->
+<fieldset>
+	<div class="description_title">{L_EXTENSION_UPDATE}</div>
+	<!-- BEGIN upload_updates_available -->
+	<!-- IF upload_updates_available.download -->
+	<span class="updater_link_source"><strong>{L_SOURCE}{L_COLON}</strong> {upload_updates_available.download}</span>
+	<!-- ELSE -->
+	<span class="updater_link_source"><strong>{L_EXTENSION_UPDATE_NO_LINK}</strong></span>
+	<!-- ENDIF -->
+	<fieldset style="background-color: #fdfcd3;">
+		<span class="extension_latest_version_title">{L_LATEST_VERSION}</span>
+		<div class="extension_latest_version_wrapper">
+			<strong class="extension_latest_version">{upload_updates_available.current}</strong>
+			<!-- IF upload_updates_available.announcement -->
+			<a href="{upload_updates_available.announcement}" class="extension_announcement_link" title="{upload_updates_available.announcement}" target="_blank"><i class="fa fa-bullhorn"></i><span>{L_ANNOUNCEMENT_TOPIC}</span></a>
+			<!-- ENDIF -->
+			<!-- IF upload_updates_available.download -->
+			<a href="{upload_updates_available.update_link}" class="extension_get_update_link" title="{L_DOWNLOAD_LATEST}"><i class="fa fa-refresh"></i> {L_UPDATE}</a>
+			<!-- ENDIF -->
+		</div>
+	</fieldset>
+	<!-- END upload_updates_available -->
+	<div></div>
+</fieldset>
+<!-- ENDIF -->
+<div class="updater_ext_step<!-- IF UPLOAD_EXT_ENABLED || not UPLOAD_EXT_INSTALLED --> updater_ext_grey_step<!-- ENDIF -->">{L_EXT_UPDATER_STEP_3}</div>
+<!-- IF not UPLOAD_EXT_ENABLED && UPLOAD_EXT_INSTALLED --><a href="{U_ACTION}&amp;action=enable" class="extension_get_update_link"><i class="fa fa-power-off"></i> {L_ENABLE}</a><!-- ENDIF -->
+<!-- IF S_UPLOAD_VERSIONCHECK && not S_UPLOAD_UP_TO_DATE -->
+<div class="updater_ext_status">{L_EXTENSION_TO_BE_ENABLED}</div>
+<!-- ENDIF -->
+<!-- ENDIF -->
+
+<!-- INCLUDE overall_footer.html -->
