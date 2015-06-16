@@ -65,7 +65,7 @@ class files
 			return false;
 		}
 		$composer = false;
-		foreach($ffs as $ff)
+		foreach ($ffs as $ff)
 		{
 			if ($ff != '.' && $ff != '..')
 			{
@@ -145,7 +145,7 @@ class files
 			{
 				return objects::$user->lang('ERROR_COPY_FILE', str_replace(objects::$phpbb_root_path, 'PHPBB_ROOT/', $src), str_replace(objects::$phpbb_root_path, 'PHPBB_ROOT/', $dst));
 			}
-			foreach($files as $file)
+			foreach ($files as $file)
 			{
 				if ($file != '.' && $file != '..')
 				{

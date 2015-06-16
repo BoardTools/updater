@@ -67,7 +67,7 @@ class extensions
 			{
 				$md_manager->get_metadata('all');
 			}
-			catch(\phpbb\extension\exception $e)
+			catch (\phpbb\extension\exception $e)
 			{
 				files::catch_errors($e);
 				return false;

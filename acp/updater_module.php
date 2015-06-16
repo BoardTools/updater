@@ -321,7 +321,7 @@ class updater_module
 			$md_manager = $phpbb_extension_manager->create_extension_metadata_manager($source_for_check, $template);
 			try
 			{
-				if($md_manager->get_metadata() === false || $md_manager->validate_require_phpbb() === false || $md_manager->validate_require_php() === false)
+				if ($md_manager->get_metadata() === false || $md_manager->validate_require_phpbb() === false || $md_manager->validate_require_php() === false)
 				{
 					files::catch_errors(files::rrmdir($phpbb_root_path . 'ext/' . $ext_tmp));
 					$file->remove();
@@ -329,7 +329,7 @@ class updater_module
 					return false;
 				}
 			}
-			catch(\phpbb\extension\exception $e)
+			catch (\phpbb\extension\exception $e)
 			{
 				files::catch_errors(files::rrmdir($phpbb_root_path . 'ext/' . $ext_tmp));
 				$file->remove();
