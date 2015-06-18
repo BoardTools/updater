@@ -95,7 +95,7 @@ class updater_module
 
 			try
 			{
-				$updates_available = extensions::version_check($upload_md_manager, $request->variable('versioncheck_force', false));
+				$updates_available = extensions::version_check($upload_md_manager, true);
 
 				$template->assign_vars(array(
 					'UPLOAD_EXT_NEW_UPDATE' => !empty($updates_available),
