@@ -1,5 +1,5 @@
 <!-- IF S_ALLOW_CDN -->
-<!-- INCLUDECSS //maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css -->
+<!-- INCLUDECSS //maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css -->
 <!-- ELSE -->
 <!-- INCLUDECSS {ROOT_PATH}ext/boardtools/updater/vendor/fortawesome/font-awesome/css/font-awesome.min.css -->
 <!-- ENDIF -->
@@ -131,10 +131,10 @@
 </fieldset>
 <!-- ENDIF -->
 <div class="updater_ext_step<!-- IF UPLOAD_EXT_ENABLED || not UPLOAD_EXT_INSTALLED --> updater_ext_grey_step<!-- ENDIF -->">{L_EXT_UPDATER_STEP_3}</div>
-<!-- IF not UPLOAD_EXT_ENABLED && UPLOAD_EXT_INSTALLED --><a href="{U_ACTION}&amp;action=enable" class="extension_get_update_link"><i class="fa fa-power-off"></i> {L_ENABLE}</a><!-- ENDIF -->
 <!-- IF S_UPLOAD_VERSIONCHECK && not S_UPLOAD_UP_TO_DATE -->
 <div class="updater_ext_status">{L_EXTENSION_TO_BE_ENABLED}</div>
 <!-- ENDIF -->
+<!-- IF not UPLOAD_EXT_ENABLED && UPLOAD_EXT_INSTALLED --><a href="{U_ACTION}&amp;action=enable" class="extension_get_update_link"><i class="fa fa-power-off"></i> {L_ENABLE}</a><!-- ENDIF -->
 <!-- ENDIF -->
 
 <!-- INCLUDE overall_footer.html -->

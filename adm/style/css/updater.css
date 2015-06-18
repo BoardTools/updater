@@ -29,8 +29,14 @@ a.extension_get_update_link {
 	-o-transition: all 0.3s ease;
 	transition: all 0.3s ease;
 }
+.rtl a.extension_get_update_link {
+	padding: 6px 0 6px 15px;
+}
 .extension_get_update_link i {
 	margin: 0 5px 0 15px;
+}
+.rtl .extension_get_update_link i {
+	margin: 0 15px 0 5px;
 }
 .extension_get_update_link:hover {
 	color: #fff;
@@ -59,6 +65,10 @@ a.extension_announcement_link {
 .extension_announcement_link span {
 	font-size: 0.9em;
 	margin-left: 10px;
+}
+.rtl .extension_announcement_link span {
+	margin-left: 0;
+	margin-right: 10px;
 }
 
 .updater_ext_step {
@@ -102,6 +112,11 @@ a.extension_announcement_link {
     padding: 6px 15px;
 }
 
+.rtl .updater_upload_name {
+	border-right: none;
+	border-left: 1px solid #D7D7D7;
+}
+
 .ext_version_bubble {
 	margin: 0 !important;
 }
@@ -124,7 +139,7 @@ a.extension_announcement_link {
 }
 
 .rtl #uploaded_ok {
-    margin-right: 0px;
+    margin-right: 0;
     margin-left: 15px;
 }
 
@@ -175,6 +190,10 @@ form fieldset {border-radius:0;}
     border: 1px solid #D7D7D7;
     margin-right: 20px;
     text-align: center;
+}
+.rtl .description_bubble {
+	margin-right: 0;
+	margin-left: 20px;
 }
 .description_name {
     display: inline-block;
@@ -233,6 +252,7 @@ fieldset {
 }
 .rtl .ext_version_bubble {
     float: left;
+	margin: 5px 0 5px 15px;
 }
 .ext_version_bubble .description_value {
     position: relative;
@@ -248,6 +268,14 @@ fieldset {
     color: #115098;
     cursor: pointer;
 }
+.rtl .ext_version_bubble i {
+	border-top-right-radius: 0;
+	border-bottom-right-radius: 0;
+	border-top-left-radius: 15px;
+	border-bottom-left-radius: 15px;
+	padding: 7px 25px 8px 10px;
+	margin: 0 -20px 0 0;
+}
 .ext_version_bubble i:hover {
     background-color: #fdfcd3;
 }
@@ -258,11 +286,14 @@ fieldset {
 }
 .extension_latest_version_wrapper {
 	display: inline-block;
-	/*overflow: hidden;*/
 	border-radius: 15px;
 	margin-left: 5px;
 	text-align: center;
 	font-size: 1.1em;
+}
+.rtl .extension_latest_version_wrapper {
+	margin-left: 0;
+	margin-right: 5px;
 }
 .extension_latest_version_title {
 	display: inline-block;
