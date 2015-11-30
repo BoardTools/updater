@@ -13,8 +13,13 @@
 	margin: 10px 15px 0 15px;
 }
 
-a.extension_get_update_link {
+.upload_update_form {
 	display: inline-block;
+}
+
+a.extension_get_update_link, .extension_get_update_button {
+	display: inline-block;
+	border: 0;
 	font-size: 1.1em;
 	border-radius: 15px;
 	padding: 6px 15px 6px 0;
@@ -29,16 +34,16 @@ a.extension_get_update_link {
 	-o-transition: all 0.3s ease;
 	transition: all 0.3s ease;
 }
-.rtl a.extension_get_update_link {
+.rtl a.extension_get_update_link, .rtl .extension_get_update_button {
 	padding: 6px 0 6px 15px;
 }
-.extension_get_update_link i {
+.extension_get_update_link i, .extension_get_update_button i {
 	margin: 0 5px 0 15px;
 }
-.rtl .extension_get_update_link i {
+.rtl .extension_get_update_link i, .rtl .extension_get_update_button i {
 	margin: 0 15px 0 5px;
 }
-.extension_get_update_link:hover {
+.extension_get_update_link:hover, .extension_get_update_button:hover {
 	color: #fff;
 	background-color: #2a70bf;
 }

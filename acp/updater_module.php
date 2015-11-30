@@ -106,7 +106,7 @@ class updater_module
 
 				foreach ($updates_available as $branch => $version_data)
 				{
-					$version_data['update_link'] = $this->u_action . "&amp;action=upload&amp;remote_upload=" . urlencode($version_data['download']);
+					$version_data['update_link'] = $request->escape($version_data['download'], true);
 					$template->assign_block_vars('upload_updates_available', $version_data);
 				}
 			}
