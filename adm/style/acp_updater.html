@@ -122,9 +122,9 @@
 			<a href="{upload_updates_available.announcement}" class="extension_announcement_link" title="{upload_updates_available.announcement}" target="_blank"><i class="fa fa-bullhorn"></i><span>{L_ANNOUNCEMENT_TOPIC}</span></a>
 			<!-- ENDIF -->
 			<!-- IF upload_updates_available.download -->
-			<form class="upload_update_form" action="{U_ACTION}&amp;action=upload">
+			<form class="upload_update_form" action="{U_ACTION}&amp;action=upload" method="post">
 				<input type="hidden" name="remote_upload" value="{upload_updates_available.update_link}" />
-				<button class="extension_get_update_button" title="{L_DOWNLOAD_LATEST}"><i class="fa fa-refresh"></i> {L_UPDATE}</button>
+				<button type="submit" name="submit" value="{L_UPDATE}" class="extension_get_update_button" title="{L_DOWNLOAD_LATEST}"><i class="fa fa-refresh"></i> {L_UPDATE}</button>
 			</form>
 			<!-- ENDIF -->
 		</div>
