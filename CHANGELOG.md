@@ -8,4 +8,4 @@ Add support for phpBB 3.2.
 # Version 1.0.0
 Initial stable release.
 
-© 2015 Igor Lavrov (https://github.com/LavIgor)
+© 2015 - 2019 Igor Lavrov (https://github.com/LavIgor)

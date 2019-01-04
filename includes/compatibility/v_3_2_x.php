@@ -2,7 +2,7 @@
 /**
  *
  * @package Upload Extensions Updater
- * @copyright (c) 2015 Igor Lavrov (https://github.com/LavIgor)
+ * @copyright (c) 2015 - 2019 Igor Lavrov (https://github.com/LavIgor)
  * @license http://opensource.org/licenses/gpl-2.0.php GNU General Public License v2
  *
  */

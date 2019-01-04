@@ -27,4 +27,4 @@ It it also possible to enable Upload Extensions if it was previously disabled.
 ## License
 [GNU General Public License v2](http://opensource.org/licenses/GPL-2.0)
 
-© 2015 - Igor Lavrov (https://github.com/LavIgor)
+© 2015 - 2019 Igor Lavrov (https://github.com/LavIgor)
