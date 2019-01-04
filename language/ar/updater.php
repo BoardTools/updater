@@ -26,6 +26,9 @@ $lang = array_merge($lang, array(
 	'EXT_UPLOAD_INIT_FAIL'				=> 'هناك مشكلة عند الإعداد لعملية تحديث الإضافة.',
 	'EXT_NOT_WRITABLE'					=> 'المجلد ext/ غير قابل للكتابة وبالتالي لا يُمكن أن تعمل الإضافة "رفع الإضافات" بصورة صحيحة. الرجاء إعطاء المجلد ext تصريح الكتابة أو ضبط الإعدادات والمحاولة مرة أخرى',
 	'EXT_UPLOAD_ERROR'					=> 'لم يتم رفع الإضافة. نرجوا التأكد من صحة الملف المضغوط للإضافة المطلوبة والمحاولة مرة أخرى.',
+	'EXT_TMP_NOT_WRITABLE'				=> 'المجلد tmp بالمسار ext/boardtools/updater/tmp/ غير قابل للكتابة وبالتالي لا يُمكن أن تعمل الإضافة "رفع الإضافات" بصورة صحيحة. الرجاء إعطاء المجلد tmp تصريح الكتابة أو ضبط الإعدادات والمحاولة مرة أخرى.',
+	'EXT_ALLOW_URL_FOPEN_DISABLED'		=> 'The allow_url_fopen setting should be enabled in order to load information from a remote resource. Please confirm that the allow_url_fopen setting is enabled in your php.ini and try again.',
+	'EXT_OPENSSL_DISABLED'				=> 'The openssl extension should be enabled in order to load information from an https resource. Please confirm that the openssl extension is enabled in your php.ini and try again.',
 	'NO_UPLOAD_FILE'					=> 'لم يتم تحديد أي ملف أو هناك خطأ أثناء عملية رفع الإضافة.',
 	'NOT_AN_EXTENSION'					=> 'لم يتم التعرف على الملف المضغوط الذي رفعته. لم يتم حفظ الملف في السيرفر.',
 

@@ -3,7 +3,7 @@
     "type": "phpbb-extension",
     "description": "Upload Extensions Updater enables you to update the extension Upload Extensions. Any other extension management can be done using Upload Extensions.",
     "homepage": "https://github.com/BoardTools/updater",
-    "version": "1.0.0-beta2",
+    "version": "1.1.0",
     "keywords": ["boardtools", "forumhulp", "phpbb", "extension", "upload", "extensions", "update", "updater"],
     "license": "GPL-2.0",
     "authors": [
@@ -11,17 +11,11 @@
             "name": "Igor Lavrov",
             "homepage": "https://github.com/lavigor",
             "role": "Developer"
-        },
-        {
-            "name": "John Peskens",
-            "homepage": "http://forumhulp.com",
-            "email": "info@forumhulp.com",
-            "role": "Co-developer of Upload Extensions"
         }
     ],
     "require": {
         "php": ">=5.3.3",
-        "fortawesome/font-awesome": "~4.2"
+        "fortawesome/font-awesome": "~4.3"
     },
     "require-dev": {
         "phpbb/epv": "dev-master"
@@ -29,7 +23,7 @@
     "extra": {
         "display-name": "Upload Extensions Updater",
         "soft-require": {
-           "phpbb/phpbb": ">=3.1.*"
+           "phpbb/phpbb": ">=3.1.0"
         },
         "version-check": {
             "host": "boardtools.github.io",

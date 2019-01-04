@@ -14,44 +14,6 @@ use \boardtools\updater\includes\objects;
 class extensions
 {
 	/**
-	* Check the version and return the available updates.
-	*
-	* @param \phpbb\extension\metadata_manager $md_manager The metadata manager for the version to check.
-	* @param bool $force_update Ignores cached data. Defaults to false.
-	* @param bool $force_cache Force the use of the cache. Override $force_update.
-	* @return string
-	* @throws RuntimeException
-	*/
-	public static function version_check(\phpbb\extension\metadata_manager $md_manager, $force_update = false, $force_cache = false)
-	{
-		$cache = objects::$cache;
-		$config = objects::$config;
-		$user = objects::$user;
-		$meta = $md_manager->get_metadata('all');
-
-		if (!isset($meta['extra']['version-check']))
-		{
-			throw new \RuntimeException($user->lang('NO_VERSIONCHECK'), 1);
-		}
-
-		$version_check = $meta['extra']['version-check'];
-
-		if (version_compare($config['version'], '3.1.1', '>'))
-		{
-			$version_helper = new \phpbb\version_helper($cache, $config, new \phpbb\file_downloader(), $user);
-		}
-		else
-		{
-			$version_helper = new \phpbb\version_helper($cache, $config, $user);
-		}
-		$version_helper->set_current_version($meta['version']);
-		$version_helper->set_file_location($version_check['host'], $version_check['directory'], $version_check['filename']);
-		$version_helper->force_stability($config['extension_force_unstable'] ? 'unstable' : null);
-
-		return $updates = $version_helper->get_suggested_updates($force_update, $force_cache);
-	}
-
-	/**
 	* The function that gets the manager for the specified extension.
 	* @param string $ext_name The name of the extension.
 	* @return \phpbb\extension\metadata_manager|bool
@@ -61,7 +23,7 @@ class extensions
 		// If they've specified an extension, let's load the metadata manager and validate it.
 		if ($ext_name && $ext_name === objects::$upload_ext_name)
 		{
-			$md_manager = new \phpbb\extension\metadata_manager($ext_name, objects::$config, objects::$phpbb_extension_manager, objects::$template, objects::$user, objects::$phpbb_root_path);
+			$md_manager = objects::$compatibility->create_metadata_manager($ext_name);
 
 			try
 			{
@@ -69,7 +31,8 @@ class extensions
 			}
 			catch (\phpbb\extension\exception $e)
 			{
-				files::catch_errors($e);
+				$message = objects::$compatibility->get_exception_message($e);
+				files::catch_errors($message);
 				return false;
 			}
 			return $md_manager;

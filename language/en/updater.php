@@ -25,6 +25,9 @@ $lang = array_merge($lang, array(
 	'EXT_UPLOAD_INIT_FAIL'				=> 'There was an error when initialising the extension upload process.',
 	'EXT_NOT_WRITABLE'					=> 'The ext/ directory is not writable. This is required for “Upload extension” to work properly. Please adjust your permissions or settings and try again.',
 	'EXT_UPLOAD_ERROR'					=> 'The extension wasn’t uploaded. Please confirm that you upload the true extension zip file and try again.',
+	'EXT_TMP_NOT_WRITABLE'				=> 'The ext/boardtools/updater/tmp/ directory is not writable. This is required for “Upload Extensions” to work properly. Please adjust your permissions or settings and try again.',
+	'EXT_ALLOW_URL_FOPEN_DISABLED'		=> 'The allow_url_fopen setting should be enabled in order to load information from a remote resource. Please confirm that the allow_url_fopen setting is enabled in your php.ini and try again.',
+	'EXT_OPENSSL_DISABLED'				=> 'The openssl extension should be enabled in order to load information from an https resource. Please confirm that the openssl extension is enabled in your php.ini and try again.',
 	'NO_UPLOAD_FILE'					=> 'No file specified or there was an error during the upload process.',
 	'NOT_AN_EXTENSION'					=> 'The uploaded zip file is not a phpBB extension. The file was not saved on the server.',
 
