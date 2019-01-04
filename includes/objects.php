@@ -35,6 +35,9 @@ class objects
 	/** @var \phpbb\extension\manager */
 	public static $phpbb_extension_manager;
 
+	/** @var string phpbb_link_template */
+	public static $phpbb_link_template;
+
 	/** @var string phpbb_root_path */
 	public static $phpbb_root_path;
 

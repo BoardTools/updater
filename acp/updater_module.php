@@ -33,6 +33,9 @@ class updater_module
 		// get any url vars
 		$action = $request->variable('action', '');
 
+		// The links from phpbb.com does not contain .zip suffix. We need to handle this case.
+		$phpbb_link_template = '#^(https://)www.phpbb.com/customise/db/download/([0-9]*?)(/composer|/manual)?/?(\?sid\=[a-zA-Z0-9]*?)?$#i';
+
 		// Work with objects class instead of $this.
 		objects::$cache = &$cache;
 		objects::$config = &$config;
@@ -40,6 +43,7 @@ class updater_module
 		objects::$phpEx = $phpEx;
 		objects::$phpbb_container = &$phpbb_container;
 		objects::$phpbb_extension_manager = &$phpbb_extension_manager;
+		objects::$phpbb_link_template = $phpbb_link_template;
 		objects::$phpbb_root_path = $phpbb_root_path;
 		objects::$request = &$request;
 		objects::$template = &$template;

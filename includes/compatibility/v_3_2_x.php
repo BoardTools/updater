@@ -42,8 +42,8 @@ class v_3_2_x implements base
 	 */
 	public function remote_upload($upload, $remote_url)
 	{
-		/** @var \boardtools\upload\includes\types\zip */
-		$upload_zip = new \boardtools\upload\includes\types\zip(
+		/** @var \boardtools\updater\includes\types\zip */
+		$upload_zip = new \boardtools\updater\includes\types\zip(
 			objects::$phpbb_container->get('files.factory'),
 			objects::$phpbb_container->get('language'),
 			objects::$phpbb_container->get('php_ini'),
