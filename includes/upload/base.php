@@ -116,7 +116,7 @@ abstract class base
 		$file = false;
 
 		// Proceed with the upload
-		if ($action === 'upload_remote')
+		if ($action !== 'force_update')
 		{
 			$php_ini = new \phpbb\php\ini();
 			if (!$php_ini->get_bool('allow_url_fopen'))
