@@ -59,7 +59,7 @@ $lang = array_merge($lang, array(
 	'EXT_ENABLED_LATEST'				=> 'A versão mais recente da extensão foi ativada com sucesso.',
 	'EXT_UPLOADED'						=> 'O envio foi bem sucedido.',
 
-	'ERROR_COPY_FILE'					=> 'A tentativa de copiar o arquivo “%1$s” para o local “%2$s” falhou.', 
+	'ERROR_COPY_FILE'					=> 'A tentativa de copiar o arquivo “%1$s” para o local “%2$s” falhou.',
 	'ERROR_CREATE_DIRECTORY'			=> 'A tentativa de criar o diretório “%s” falhou.',
-	'ERROR_REMOVE_DIRECTORY'			=> 'A tentativa de remover o diretório “%s” falhou.', 
+	'ERROR_REMOVE_DIRECTORY'			=> 'A tentativa de remover o diretório “%s” falhou.',
 ));
